@@ -18,9 +18,9 @@ pipeline {
 
         stage('stop older container and auto remove')
         {
-            steps{
-                script{
-                    def doc_containers = sh(returnStdout: true, script: 'docker container ps -aq').replaceAll('\n', ' ') 
+            steps {
+                script {
+                    def doc_containers = sh(returnStdout: true, script: 'docker container ps -aq -f name=${DOCKER_CONTAINER_NAME}').replaceAll('\n', ' ') 
                     if (doc_containers) {
                         sh "docker stop ${doc_containers}"
                     }
