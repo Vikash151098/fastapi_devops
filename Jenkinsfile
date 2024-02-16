@@ -4,8 +4,8 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = 'fastapi_devops_i'
         DOCKER_CONTAINER_NAME = 'fastapi_devops_c'
-        HOST_PORT = '80'
-        CONTAINER_PORT = '80'
+        HOST_PORT = '5000'
+        CONTAINER_PORT = '5000'
     }
 
     stages {
